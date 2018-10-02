@@ -17,6 +17,15 @@ class Course(models.Model):
             course.session_count = len(course.session_ids)
 
 
+
+class Instructor_(models.Model):
+    _inherit = 'res.partner'
+    
+    # also add a read-only field that shows the sessions attended by a given contact
+    is_instructor = fields.Boolean()
+    #sessions_attended_id = fields.Many2many('res.partner', readonly=True, string = "Sessions Attended")
+    
+
 class Session(models.Model):
     _name = 'openacademy.session'
 
@@ -32,6 +41,9 @@ class Session(models.Model):
     taken_seats = fields.Float(string="Taken seats", compute='_taken_seats')
     level = fields.Selection(related='course_id.level', readonly=True)
     responsible_id = fields.Many2one(related='course_id.responsible_id', readonly=True, store=True)
+    description = fields.Html()
+    
+    
 
     attendees_count = fields.Integer(string="Attendees count", compute='_get_attendees_count', store=True)
 
@@ -59,3 +71,4 @@ class Session(models.Model):
             }}
         delta = fields.Date.from_string(self.end_date) - fields.Date.from_string(self.start_date)
         self.duration = delta.days + 1
+

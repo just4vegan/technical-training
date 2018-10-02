@@ -13,6 +13,9 @@
                 </tree>
             </field>
         </record>
+        
+
+       
 
         <record model="ir.ui.view" id="course_view_form">
             <field name="name">course form</field>
