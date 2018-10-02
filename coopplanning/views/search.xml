@@ -1,0 +1,16 @@
+<odoo>
+    <record model="ir.ui.view" id="course_search_view">
+            <field name="name">tasktemplate.search</field>
+            <field name="model">coopplanning.task</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="end_time"/>
+                </search>
+            </field>
+    </record>
+</odoo>
+
+            
+
+

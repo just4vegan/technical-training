@@ -27,6 +27,7 @@
         "views/task.xml",
         "data/coopplanning_data.xml",
         "data/task_template_demo.xml",
+        "views/search.xml"
     ],
     # only loaded in demonstration mode
     'demo': [],
