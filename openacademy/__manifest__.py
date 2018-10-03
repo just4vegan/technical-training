@@ -23,7 +23,7 @@
 
     # always loaded
     'data': [
-        "data/openacademy_data.xml",
+        "data/data.xml",
     ],
     # only loaded in demonstration mode
     'demo': [],
